@@ -4,6 +4,10 @@ How to install Altera ModelSim 16.0 on Fedora 23/24.<br/>
 There is a known problem with the current freetype packet:
 https://wiki.archlinux.org/index.php/Altera_Design_Software#With_freetype2_2.5.0.1-1
 
+1. Install dependencies (Fedora 24)
+```
+sudo dnf install glibc.i686 zlib.i686 bzip2-libs.i686 libXft.i686 libXext.i686 ncurses-compat-libs.i686
+```
 * Download and install ModelSim
 * Download old freetype package, extract, copy lib
 ```
