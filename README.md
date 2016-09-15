@@ -8,8 +8,10 @@ https://wiki.archlinux.org/index.php/Altera_Design_Software#With_freetype2_2.5.0
 ```
 sudo dnf install glibc.i686 zlib.i686 bzip2-libs.i686 libXft.i686 libXext.i686 ncurses-compat-libs.i686
 ```
-* Download and install ModelSim
-* Download old freetype package, extract, copy lib
+1. Download and install ModelSim
+1. modify vsim
+Modify the file /home/$USER/altera/16.0/modelsim_ase/bin/vsim, row 205 from  vco="linux_rh60" to vco="linux"
+1. Download old freetype package, extract, copy lib
 ```
 wget ftp://rpmfind.net/linux/sourceforge/s/sl/sl7-i686-project/yum/FEDOREL7/FULLMISSING/freetype-2.4.11-9.el7.i686.rpm
 rpm2cpio freetype-2.4.11-9.el7.i686.rpm | cpio -idmv
@@ -17,7 +19,7 @@ cp usr/lib/* /home/$USER/altera/16.0/modelsim_ase/lib/
 rm -r usr freetype-2.4.11-9.el7.i686.rpm  
 ```
 
-* Set alias for vsim
+1. Set alias for vsim
 ```
 export PATH=$PATH:/home/$USER/altera/16.0/modelsim_ase/bin
 alias vsim="LD_PRELOAD=\"/home/$USER/altera/16.0/modelsim_ase/lib/libfreetype.so.6\" vsim"
