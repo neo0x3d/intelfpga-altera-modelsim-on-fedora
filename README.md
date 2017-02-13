@@ -1,4 +1,4 @@
-# modelsim_altera_fedora23-24
+# altera 16.1 - modelsim 10.4b on Fedora 23/24
 
 How to install Altera ModelSim 16.0 on Fedora 23/24.<br/>
 There is a known problem with the current freetype packet:
@@ -25,3 +25,14 @@ export PATH=$PATH:/home/$USER/altera/16.0/modelsim_ase/bin
 alias vsim="LD_PRELOAD=\"/home/$USER/altera/16.0/modelsim_ase/lib/libfreetype.so.6\" vsim"
 ```
 Or use lazy.sh for automated lib installation after ModelSim has been installed.
+
+# altera/intelFPGA 16.1 - modelsim 10.5b on Fedora 25
+
+Similar to instructions above, but with following changes:
+
+Add to ~/.bashrc
+```
+export PATH=$PATH:/home/$USER/intelFPGA/16.1/modelsim_ase/linuxaloem
+alias vsim="LD_PRELOAD=\"/home/$USER/intelFPGA/16.1/modelsim_ase/lib/libfreetype.so.6\" vsim"
+```
+Maybe modify "linux_rh60" to "linux" in the file vco
