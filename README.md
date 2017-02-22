@@ -28,11 +28,12 @@ Or use lazy.sh for automated lib installation after ModelSim has been installed.
 
 # altera/intelFPGA 16.1 - modelsim 10.5b on Fedora 25
 
-Similar to instructions above, but with following changes:
+Walk though the steps from above (modelsim 10.4b on Fedora 23/24), after intelFPGA has been installed:
+* Download and extract the same libfreetype packet as above (the version of libfreetype matters, the package for Fedora 23 or 24 can also be used on Fedora 25, it will only be used for modelsim and NOT for the rest of the system!)
+* Modify the string "linux_rh60" to "linux" in the ~/intelFPGA/16.1/modelsim_ase/bin/vsim file
 
 Add to ~/.bashrc
 ```
 export PATH=$PATH:/home/$USER/intelFPGA/16.1/modelsim_ase/linuxaloem
 alias vsim="LD_PRELOAD=\"/home/$USER/intelFPGA/16.1/modelsim_ase/lib/libfreetype.so.6\" vsim"
 ```
-Maybe modify "linux_rh60" to "linux" in the file vco
